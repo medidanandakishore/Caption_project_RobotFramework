@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220214 16:53:02.007" rpa="false" schemaversion="2">
+<suite id="s1" name="Verifyinvalidcredential" source="C:\Users\parve\PycharmProjects\robot_frame_work\login_suite\verifyinvalidcredential.robot">
+<test id="s1-t1" name="TC1">
+<kw name="Launch Browser" library="common_functionality" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<arg>executable_path=${EXECDIR}/driver/msedgedriver</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220214 16:53:02.319" level="INFO">Opening browser 'edge' to base url 'None'.</msg>
+<status status="PASS" starttime="20220214 16:53:02.304" endtime="20220214 16:53:05.543"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220214 16:53:05.543" endtime="20220214 16:53:05.750"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220214 16:53:05.750" endtime="20220214 16:53:05.755"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/screenshot</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220214 16:53:05.755" endtime="20220214 16:53:05.758"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220214 16:53:05.759" level="INFO">Opening url 'https://phptravels.net/'</msg>
+<status status="PASS" starttime="20220214 16:53:05.758" endtime="20220214 16:53:19.370"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:02.304" endtime="20220214 16:53:19.371"/>
+</kw>
+<kw name="Verify Invalid Credentials Template">
+<arg>happy@123</arg>
+<kw name="Click Login" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:19.373" level="INFO">Clicking element 'xpath=//*[@id="fadein"]/header/div[1]/div/div/div[2]/div/div/a[2]'.</msg>
+<status status="PASS" starttime="20220214 16:53:19.372" endtime="20220214 16:53:20.080"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:19.372" endtime="20220214 16:53:20.081"/>
+</kw>
+<kw name="Enter Username" library="login_page">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_LOCATOR}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:20.082" level="INFO">Typing text 'happy@123' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20220214 16:53:20.082" endtime="20220214 16:53:20.307"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:20.081" endtime="20220214 16:53:20.307"/>
+</kw>
+<kw name="Enter Password" library="login_page">
+<arg>${password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:20.310" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg timestamp="20220214 16:53:20.393" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220214 16:53:20.533" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220214 16:53:20.309" endtime="20220214 16:53:20.533"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:20.308" endtime="20220214 16:53:20.534"/>
+</kw>
+<kw name="Click Loginsubmit" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGINSUBMIT_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:20.535" level="INFO">Clicking element 'xpath=//*[@id="fadein"]/div[1]/div/div[2]/div[2]/div/form/div[3]/button'.</msg>
+<msg timestamp="20220214 16:53:21.780" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/selenium-screenshot-10.png"&gt;&lt;img src="screenshot/selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220214 16:53:21.780" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="btn btn-default btn-lg btn-block effect ladda-button waves-effect" data-style="zoom-in"&gt;...&lt;/button&gt; is not clickable at point (635, 519). Other element would receive the click: &lt;span id="cookieconsent:desc" class="cc-message"&gt;...&lt;/span&gt;
+  (Session info: MicrosoftEdge=98.0.1108.50)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF773B2+360450]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCB7BB57+885959]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBF6CE+1163326]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBD123+1153683]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBA868+1143256]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBB9435+1138085]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBAA457+1076679]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD306A+1243610]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA9A54+1074116]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD31D0+1243968]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBE7BDC+1328460]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD2ED3+1243203]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA83C0+1068336]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA94E8+1072728]
+	Ordinal0 [0x00007FF6CCA05ED3+24275]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC882F7+277063]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCE523D2+2946]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC51B1C+53868]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6C553+315811]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BE94+314084]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BCDD+313645]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCEC61F3+477603]
+	BaseThreadInitThunk [0x00007FF8AF2754E0+16]
+	RtlUserThreadStart [0x00007FF8AFB0485B+43]
+</msg>
+<status status="FAIL" starttime="20220214 16:53:20.534" endtime="20220214 16:53:21.780"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:20.534" endtime="20220214 16:53:21.780"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:19.371" endtime="20220214 16:53:21.780"/>
+</kw>
+<kw name="End Browser" library="common_functionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220214 16:53:21.780" endtime="20220214 16:53:24.015"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:21.780" endtime="20220214 16:53:24.015"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:02.304" endtime="20220214 16:53:24.015">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="btn btn-default btn-lg btn-block effect ladda-button waves-effect" data-style="zoom-in"&gt;...&lt;/button&gt; is not clickable at point (635, 519). Other element would receive the click: &lt;span id="cookieconsent:desc" class="cc-message"&gt;...&lt;/span&gt;
+  (Session info: MicrosoftEdge=98.0.1108.50)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF773B2+360450]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCB7BB57+885959]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBF6CE+1163326]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBD123+1153683]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBA868+1143256]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBB9435+1138085]
+    [ Message content over the limit has been removed. ]
+...Applications::Events::EventProperty::to_string [0x00007FF6CCBA83C0+1068336]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA94E8+1072728]
+	Ordinal0 [0x00007FF6CCA05ED3+24275]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC882F7+277063]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCE523D2+2946]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC51B1C+53868]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6C553+315811]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BE94+314084]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BCDD+313645]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCEC61F3+477603]
+	BaseThreadInitThunk [0x00007FF8AF2754E0+16]
+	RtlUserThreadStart [0x00007FF8AFB0485B+43]</status>
+</test>
+<test id="s1-t2" name="TC1">
+<kw name="Launch Browser" library="common_functionality" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<arg>executable_path=${EXECDIR}/driver/msedgedriver</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220214 16:53:24.015" level="INFO">Opening browser 'edge' to base url 'None'.</msg>
+<status status="PASS" starttime="20220214 16:53:24.015" endtime="20220214 16:53:27.733"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220214 16:53:27.734" endtime="20220214 16:53:27.977"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220214 16:53:27.977" endtime="20220214 16:53:27.993"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/screenshot</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220214 16:53:27.993" endtime="20220214 16:53:28.002"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220214 16:53:28.009" level="INFO">Opening url 'https://phptravels.net/'</msg>
+<status status="PASS" starttime="20220214 16:53:28.003" endtime="20220214 16:53:36.780"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:24.015" endtime="20220214 16:53:36.781"/>
+</kw>
+<kw name="Verify Invalid Credentials Template">
+<arg>nanda</arg>
+<kw name="Click Login" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:36.785" level="INFO">Clicking element 'xpath=//*[@id="fadein"]/header/div[1]/div/div/div[2]/div/div/a[2]'.</msg>
+<status status="PASS" starttime="20220214 16:53:36.783" endtime="20220214 16:53:37.631"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:36.783" endtime="20220214 16:53:37.631"/>
+</kw>
+<kw name="Enter Username" library="login_page">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_LOCATOR}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:37.635" level="INFO">Typing text '' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20220214 16:53:37.634" endtime="20220214 16:53:37.808"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:37.632" endtime="20220214 16:53:37.808"/>
+</kw>
+<kw name="Enter Password" library="login_page">
+<arg>${password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:37.808" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg timestamp="20220214 16:53:37.898" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220214 16:53:38.025" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220214 16:53:37.808" endtime="20220214 16:53:38.025"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:37.808" endtime="20220214 16:53:38.025"/>
+</kw>
+<kw name="Click Loginsubmit" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGINSUBMIT_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:38.025" level="INFO">Clicking element 'xpath=//*[@id="fadein"]/div[1]/div/div[2]/div[2]/div/form/div[3]/button'.</msg>
+<msg timestamp="20220214 16:53:39.438" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/selenium-screenshot-11.png"&gt;&lt;img src="screenshot/selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220214 16:53:39.438" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="btn btn-default btn-lg btn-block effect ladda-button waves-effect" data-style="zoom-in"&gt;...&lt;/button&gt; is not clickable at point (635, 519). Other element would receive the click: &lt;span id="cookieconsent:desc" class="cc-message"&gt;...&lt;/span&gt;
+  (Session info: MicrosoftEdge=98.0.1108.50)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF773B2+360450]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCB7BB57+885959]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBF6CE+1163326]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBD123+1153683]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBA868+1143256]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBB9435+1138085]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBAA457+1076679]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD306A+1243610]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA9A54+1074116]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD31D0+1243968]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBE7BDC+1328460]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD2ED3+1243203]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA83C0+1068336]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA94E8+1072728]
+	Ordinal0 [0x00007FF6CCA05ED3+24275]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC882F7+277063]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCE523D2+2946]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC51B1C+53868]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6C553+315811]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BE94+314084]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BCDD+313645]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCEC61F3+477603]
+	BaseThreadInitThunk [0x00007FF8AF2754E0+16]
+	RtlUserThreadStart [0x00007FF8AFB0485B+43]
+</msg>
+<status status="FAIL" starttime="20220214 16:53:38.025" endtime="20220214 16:53:39.438"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:38.025" endtime="20220214 16:53:39.438"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:36.782" endtime="20220214 16:53:39.438"/>
+</kw>
+<kw name="End Browser" library="common_functionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220214 16:53:39.438" endtime="20220214 16:53:41.785"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:39.438" endtime="20220214 16:53:41.785"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:24.015" endtime="20220214 16:53:41.785">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="btn btn-default btn-lg btn-block effect ladda-button waves-effect" data-style="zoom-in"&gt;...&lt;/button&gt; is not clickable at point (635, 519). Other element would receive the click: &lt;span id="cookieconsent:desc" class="cc-message"&gt;...&lt;/span&gt;
+  (Session info: MicrosoftEdge=98.0.1108.50)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF773B2+360450]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCB7BB57+885959]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBF6CE+1163326]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBD123+1153683]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBA868+1143256]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBB9435+1138085]
+    [ Message content over the limit has been removed. ]
+...Applications::Events::EventProperty::to_string [0x00007FF6CCBA83C0+1068336]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA94E8+1072728]
+	Ordinal0 [0x00007FF6CCA05ED3+24275]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC882F7+277063]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCE523D2+2946]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC51B1C+53868]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6C553+315811]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BE94+314084]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BCDD+313645]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCEC61F3+477603]
+	BaseThreadInitThunk [0x00007FF8AF2754E0+16]
+	RtlUserThreadStart [0x00007FF8AFB0485B+43]</status>
+</test>
+<test id="s1-t3" name="TC1">
+<kw name="Launch Browser" library="common_functionality" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<arg>executable_path=${EXECDIR}/driver/msedgedriver</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220214 16:53:41.800" level="INFO">Opening browser 'edge' to base url 'None'.</msg>
+<status status="PASS" starttime="20220214 16:53:41.800" endtime="20220214 16:53:45.536"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220214 16:53:45.544" endtime="20220214 16:53:45.856"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220214 16:53:45.856" endtime="20220214 16:53:45.856"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/screenshot</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220214 16:53:45.864" endtime="20220214 16:53:45.872"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220214 16:53:45.877" level="INFO">Opening url 'https://phptravels.net/'</msg>
+<status status="PASS" starttime="20220214 16:53:45.872" endtime="20220214 16:53:53.536"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:41.800" endtime="20220214 16:53:53.536"/>
+</kw>
+<kw name="Verify Invalid Credentials Template">
+<arg>abcd@123</arg>
+<kw name="Click Login" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:53.544" level="INFO">Clicking element 'xpath=//*[@id="fadein"]/header/div[1]/div/div/div[2]/div/div/a[2]'.</msg>
+<status status="PASS" starttime="20220214 16:53:53.544" endtime="20220214 16:53:54.383"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:53.544" endtime="20220214 16:53:54.391"/>
+</kw>
+<kw name="Enter Username" library="login_page">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_LOCATOR}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:54.391" level="INFO">Typing text 'abcd@123' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20220214 16:53:54.391" endtime="20220214 16:53:54.639"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:54.391" endtime="20220214 16:53:54.639"/>
+</kw>
+<kw name="Enter Password" library="login_page">
+<arg>${password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:54.639" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg timestamp="20220214 16:53:54.783" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220214 16:53:54.905" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220214 16:53:54.639" endtime="20220214 16:53:54.905"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:54.639" endtime="20220214 16:53:54.905"/>
+</kw>
+<kw name="Click Loginsubmit" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGINSUBMIT_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220214 16:53:54.913" level="INFO">Clicking element 'xpath=//*[@id="fadein"]/div[1]/div/div[2]/div[2]/div/form/div[3]/button'.</msg>
+<msg timestamp="20220214 16:53:56.312" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/selenium-screenshot-12.png"&gt;&lt;img src="screenshot/selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220214 16:53:56.312" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="btn btn-default btn-lg btn-block effect ladda-button waves-effect" data-style="zoom-in"&gt;...&lt;/button&gt; is not clickable at point (635, 519). Other element would receive the click: &lt;span id="cookieconsent:desc" class="cc-message"&gt;...&lt;/span&gt;
+  (Session info: MicrosoftEdge=98.0.1108.50)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF773B2+360450]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCB7BB57+885959]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBF6CE+1163326]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBD123+1153683]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBA868+1143256]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBB9435+1138085]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBAA457+1076679]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD306A+1243610]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA9A54+1074116]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD31D0+1243968]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBE7BDC+1328460]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD2ED3+1243203]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA83C0+1068336]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA94E8+1072728]
+	Ordinal0 [0x00007FF6CCA05ED3+24275]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC882F7+277063]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCE523D2+2946]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC51B1C+53868]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6C553+315811]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BE94+314084]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BCDD+313645]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCEC61F3+477603]
+	BaseThreadInitThunk [0x00007FF8AF2754E0+16]
+	RtlUserThreadStart [0x00007FF8AFB0485B+43]
+</msg>
+<status status="FAIL" starttime="20220214 16:53:54.913" endtime="20220214 16:53:56.312"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:54.905" endtime="20220214 16:53:56.312"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:53.544" endtime="20220214 16:53:56.312"/>
+</kw>
+<kw name="End Browser" library="common_functionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220214 16:53:56.312" endtime="20220214 16:53:58.675"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:56.312" endtime="20220214 16:53:58.675"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:41.785" endtime="20220214 16:53:58.675">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="btn btn-default btn-lg btn-block effect ladda-button waves-effect" data-style="zoom-in"&gt;...&lt;/button&gt; is not clickable at point (635, 519). Other element would receive the click: &lt;span id="cookieconsent:desc" class="cc-message"&gt;...&lt;/span&gt;
+  (Session info: MicrosoftEdge=98.0.1108.50)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF773B2+360450]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCB7BB57+885959]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBF6CE+1163326]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBD123+1153683]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBA868+1143256]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBB9435+1138085]
+    [ Message content over the limit has been removed. ]
+...Applications::Events::EventProperty::to_string [0x00007FF6CCBA83C0+1068336]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA94E8+1072728]
+	Ordinal0 [0x00007FF6CCA05ED3+24275]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC882F7+277063]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCE523D2+2946]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC51B1C+53868]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6C553+315811]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BE94+314084]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BCDD+313645]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCEC61F3+477603]
+	BaseThreadInitThunk [0x00007FF8AF2754E0+16]
+	RtlUserThreadStart [0x00007FF8AFB0485B+43]</status>
+</test>
+<test id="s1-t4" name="TC1">
+<kw name="Launch Browser" library="common_functionality" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<arg>executable_path=${EXECDIR}/driver/msedgedriver</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220214 16:53:58.675" level="INFO">Opening browser 'edge' to base url 'None'.</msg>
+<status status="PASS" starttime="20220214 16:53:58.675" endtime="20220214 16:54:02.632"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220214 16:54:02.639" endtime="20220214 16:54:02.919"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220214 16:54:02.919" endtime="20220214 16:54:02.919"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}/screenshot</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220214 16:54:02.927" endtime="20220214 16:54:02.943"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220214 16:54:02.943" level="INFO">Opening url 'https://phptravels.net/'</msg>
+<status status="PASS" starttime="20220214 16:54:02.943" endtime="20220214 16:54:10.928"/>
+</kw>
+<status status="PASS" starttime="20220214 16:53:58.675" endtime="20220214 16:54:10.934"/>
+</kw>
+<kw name="Verify Invalid Credentials Template">
+<arg>xyz</arg>
+<kw name="Click Login" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220214 16:54:10.950" level="INFO">Clicking element 'xpath=//*[@id="fadein"]/header/div[1]/div/div/div[2]/div/div/a[2]'.</msg>
+<status status="PASS" starttime="20220214 16:54:10.949" endtime="20220214 16:54:12.062"/>
+</kw>
+<status status="PASS" starttime="20220214 16:54:10.946" endtime="20220214 16:54:12.062"/>
+</kw>
+<kw name="Enter Username" library="login_page">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_LOCATOR}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220214 16:54:12.062" level="INFO">Typing text '' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20220214 16:54:12.062" endtime="20220214 16:54:12.192"/>
+</kw>
+<status status="PASS" starttime="20220214 16:54:12.062" endtime="20220214 16:54:12.192"/>
+</kw>
+<kw name="Enter Password" library="login_page">
+<arg>${password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220214 16:54:12.193" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg timestamp="20220214 16:54:12.241" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220214 16:54:12.396" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220214 16:54:12.193" endtime="20220214 16:54:12.396"/>
+</kw>
+<status status="PASS" starttime="20220214 16:54:12.192" endtime="20220214 16:54:12.396"/>
+</kw>
+<kw name="Click Loginsubmit" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGINSUBMIT_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220214 16:54:12.397" level="INFO">Clicking element 'xpath=//*[@id="fadein"]/div[1]/div/div[2]/div[2]/div/form/div[3]/button'.</msg>
+<msg timestamp="20220214 16:54:13.797" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/selenium-screenshot-13.png"&gt;&lt;img src="screenshot/selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220214 16:54:13.797" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="btn btn-default btn-lg btn-block effect ladda-button waves-effect" data-style="zoom-in"&gt;...&lt;/button&gt; is not clickable at point (635, 519). Other element would receive the click: &lt;span id="cookieconsent:desc" class="cc-message"&gt;...&lt;/span&gt;
+  (Session info: MicrosoftEdge=98.0.1108.50)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF773B2+360450]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCB7BB57+885959]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBF6CE+1163326]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBD123+1153683]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBA868+1143256]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBB9435+1138085]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBAA457+1076679]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD306A+1243610]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA9A54+1074116]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD31D0+1243968]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBE7BDC+1328460]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBD2ED3+1243203]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA83C0+1068336]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA94E8+1072728]
+	Ordinal0 [0x00007FF6CCA05ED3+24275]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC882F7+277063]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCE523D2+2946]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC51B1C+53868]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6C553+315811]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BE94+314084]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BCDD+313645]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCEC61F3+477603]
+	BaseThreadInitThunk [0x00007FF8AF2754E0+16]
+	RtlUserThreadStart [0x00007FF8AFB0485B+43]
+</msg>
+<status status="FAIL" starttime="20220214 16:54:12.397" endtime="20220214 16:54:13.797"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:54:12.396" endtime="20220214 16:54:13.797"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:54:10.937" endtime="20220214 16:54:13.797"/>
+</kw>
+<kw name="End Browser" library="common_functionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220214 16:54:13.797" endtime="20220214 16:54:16.144"/>
+</kw>
+<status status="PASS" starttime="20220214 16:54:13.797" endtime="20220214 16:54:16.144"/>
+</kw>
+<status status="FAIL" starttime="20220214 16:53:58.675" endtime="20220214 16:54:16.144">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="btn btn-default btn-lg btn-block effect ladda-button waves-effect" data-style="zoom-in"&gt;...&lt;/button&gt; is not clickable at point (635, 519). Other element would receive the click: &lt;span id="cookieconsent:desc" class="cc-message"&gt;...&lt;/span&gt;
+  (Session info: MicrosoftEdge=98.0.1108.50)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF773B2+360450]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCB7BB57+885959]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBF6CE+1163326]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBD123+1153683]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBBA868+1143256]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBB9435+1138085]
+    [ Message content over the limit has been removed. ]
+...Applications::Events::EventProperty::to_string [0x00007FF6CCBA83C0+1068336]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6CCBA94E8+1072728]
+	Ordinal0 [0x00007FF6CCA05ED3+24275]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC882F7+277063]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCE523D2+2946]
+	Microsoft::Applications::Events::LogManagerProvider::CreateLogManager [0x00007FF6CCC51B1C+53868]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6C553+315811]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BE94+314084]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCF6BCDD+313645]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF6CCEC61F3+477603]
+	BaseThreadInitThunk [0x00007FF8AF2754E0+16]
+	RtlUserThreadStart [0x00007FF8AFB0485B+43]</status>
+</test>
+<doc>This suit file handles all the test case related to the
+valid credentials</doc>
+<status status="FAIL" starttime="20220214 16:53:02.007" endtime="20220214 16:54:16.144"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="4" skip="0" id="s1" name="Verifyinvalidcredential">Verifyinvalidcredential</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220214 16:53:24.015" level="WARN">Multiple test cases with name 'TC1' executed in test suite 'Verifyinvalidcredential'.</msg>
+<msg timestamp="20220214 16:53:41.785" level="WARN">Multiple test cases with name 'TC1' executed in test suite 'Verifyinvalidcredential'.</msg>
+<msg timestamp="20220214 16:53:58.675" level="WARN">Multiple test cases with name 'TC1' executed in test suite 'Verifyinvalidcredential'.</msg>
+</errors>
+</robot>
